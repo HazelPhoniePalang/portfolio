@@ -13,6 +13,44 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
+  <style>
+    .skill-card {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .skill-card:hover {
+      background-color: #E1DACB !important;
+      color: #A63446 !important;
+    }
+
+    .skill-card:hover h5,
+    .skill-card:hover i {
+      color: #A63446 !important;
+    }
+
+    .card {
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background-color: #E1DACB;
+      transform: translateY(-6px);
+    }
+
+    .card:hover .card-title,
+    .card:hover .card-text {
+      color: #A63446;
+    }
+
+    .card:hover .btn {
+      background-color: #A63446;
+      color: #E1DACB;
+    }
+
+
+  </style>
+
 </head>
 <!--data-bs-spy="scroll" data-bs-target="#navMenu"-->
 <body data-bs-spy="scroll" data-bs-target="#navMenu">
@@ -20,7 +58,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" style="background-color: #080E21; ">
   <div class="container" >
-    <a class="navbar-brand fw-bold fs-4 f" style="color: #E1DACB; font-weight: bolder; font-style: italic; " href="#home">Hazel</a>
+    <a class="navbar-brand fw-bold fs-4 f" style="color: #E1DACB; font-weight: bolder; font-style: italic; " href="#home">Hazel ♡</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
@@ -41,9 +79,9 @@
 <!-- HERO -->
 <section id="home">
   <div class="container-fluid m-auto vh-100 d-flex flex-column justify-content-center align-items-center text-white mb-5" style="background-color: #0A122A;">
-    <h1 class="display-4 fw-bold">Hi, I'm Hazel Phonie   </h1>
-    <p class="lead fst-italic">IT Student • Beginner Web Developer • Front-End Developer</p>
-    <a href="#projects" class="btn btn-light btn-lg mt-3">View Projects</a>
+    <h1 class="display-4 fw-bold" style="color: #E1DACB;">♡ Hi, I'm Hazel Phonie ♡</h1>
+    <p class="lead fst-italic" style="color: #E1DACB;">IT Student • Beginner Web Developer • Front-End Developer</p>
+    <a href="#projects" class="btn btn-light btn-lg mt-3" style="background-color: #A63446; color: #E1DACB; border-color: #A63446;">View Projects</a>
   </div>
 </section>
 
@@ -52,17 +90,22 @@
   <div class="container mb-5">
     <div class="row align-items-center">
       <div class="col-lg-5 mb-4">
-        <img src="https://scontent.fdvo3-1.fna.fbcdn.net/v/t39.30808-6/505986659_122171520116360785_6923013819456449190_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeExnp-71easmRoAMajH3Ln4GEQtxEtgyKgYRC3ES2DIqAqjGowZarAO-90phQgNFtSQ4xUqnjTRbj8hTnoYZa4N&_nc_ohc=6Rb2wHoGfGsQ7kNvwGB__n8&_nc_oc=AdnLeIv7csESoPajn4WTbpvBqF7HBHy_1SY68qQEoKF58n9bVxkW8AQpvEZu7ljX4sw&_nc_zt=23&_nc_ht=scontent.fdvo3-1.fna&_nc_gid=K5IC3GKnR6r5bYdi3JQtVw&oh=00_AfrmwZuHAA4uRRGpCZP9acxdj7wMTIlK_gIc7ihM2VFpAw&oe=698123D9" class="img-fluid border-1 rounded shadow-sm ">
-      </div>
+        <img 
+          src="https://scontent.fdvo3-1.fna.fbcdn.net/v/t39.30808-6/505986659_122171520116360785_6923013819456449190_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeExnp-71easmRoAMajH3Ln4GEQtxEtgyKgYRC3ES2DIqAqjGowZarAO-90phQgNFtSQ4xUqnjTRbj8hTnoYZa4N&_nc_ohc=6Rb2wHoGfGsQ7kNvwGQ3ALk&_nc_oc=Adkbgt70745okGfeZ8QVvaJW8lCzF0syD_D4hlNadgZ6k_PKs5QaCVKP_XztuFjRcFw&_nc_zt=23&_nc_ht=scontent.fdvo3-1.fna&_nc_gid=UL9HjQr4xEU8v8IOFXqf_g&oh=00_AfojQzHjCqiPVCgr3cfC711ptpihee-mMmLrZ0F42EAthQ&oe=698123D9"
+          class="img-fluid rounded shadow-sm"
+          style="border: 6px solid #A63446;"
+        >
+</div>
+
       <div class="col-lg-7">
-        <h2 class="fw-bold fw-semibold" style="color: #A63446; font-style: italic;">About Me</h2>
-        <p class="text-muted">
+        <h2 class="fw-bold fw-semibold" style="color: #A63446; font-style: italic;">About Me ♡</h2>
+        <p class="text-muted" style="color: #0A122A;">
           Hi! I am Hazel Phonie P. Palang, you can call me "Hazel" or "Zel"
           I am an IT student in University of Mindanao, currently interested in Web developing, and particularly anything that involves designing.
 
           I enjoy learning new skills making projects involving HTML, CSS, BOOTSTRAP, and Javascript.
         </p>
-        <a href="bio.html" target="_blank" class="btn btn-primary">Read More</a>
+        <a href="bio.html" target="_blank" class="btn btn-primary" style="background-color: #A63446; border-color: #0A122A;">Read More</a>
       </div>
     </div>
   </div>
@@ -75,36 +118,36 @@
 
     <div class="row g-4 justify-content-center">
       <div class="col-md-2">
-        <div class="skill-card bg-danger text-white rounded text-center p-3">
-          <i class="bi bi-filetype-html"></i>
+        <div class="skill-card text-white rounded text-center p-3" style="color: #E1DACB; background-color: #A63446;">
+          <i class="bi bi-filetype-html fs-1"></i>
           <h5>HTML</h5>
         </div>
       </div>
 
       <div class="col-md-2">
-        <div class="skill-card bg-primary text-white rounded text-center p-3">
-          <i class="bi bi-css"></i>
+        <div class="skill-card text-white rounded text-center p-3" style="color: #E1DACB; background-color: #A63446;">
+          <i class="bi bi-css fs-1"></i>
           <h5>CSS</h5>
         </div>
       </div>
 
       <div class="col-md-2">
-        <div class="skill-card bg-secondary text-white rounded text-center p-3">
-          <i class="bi bi-bootstrap"></i>
+        <div class="skill-card text-white rounded text-center p-3" style="color: #E1DACB; background-color: #A63446;">
+          <i class="bi bi-bootstrap fs-1"></i>
           <h5>Bootstrap</h5>
         </div>
       </div>
 
       <div class="col-md-2">
-        <div class="skill-card bg-success text-white rounded text-center p-3">
-          <i class="bi bi-filetype-js"></i>
+        <div class="skill-card text-white rounded text-center p-3" style="color: #E1DACB; background-color: #A63446;">
+          <i class="bi bi-filetype-js fs-1"></i>
           <h5>JavaScript</h5>
         </div>
       </div>
     </div>
-
   </div>
 </section>
+
 
 <!-- PROJECTS -->
 <section id="projects" class="py-5">
@@ -118,7 +161,7 @@
           <div class="card-body">
             <h5 class="card-title">Project One</h5>
             <p class="card-text">Simple responsive website using HTML & CSS.</p>
-            <a href="#" class="btn btn-primary btn-sm">View</a>
+            <a href="#" class="btn  btn-sm align-content-center" style="width:60px;height:40px;background:#A63446;color:#E1DACB;">View</a>
           </div>
         </div>
       </div>
@@ -129,7 +172,7 @@
           <div class="card-body">
             <h5 class="card-title">Project Two</h5>
             <p class="card-text">Bootstrap landing page with grid system.</p>
-            <a href="#" class="btn btn-primary btn-sm">View</a>
+            <a href="#" class="btn btn-sm align-content-center" style="width:60px;height:40px;background:#A63446;color:#E1DACB;">View</a>
           </div>
         </div>
       </div>
@@ -140,7 +183,7 @@
           <div class="card-body">
             <h5 class="card-title">Project Three</h5>
             <p class="card-text">Personal portfolio website.</p>
-            <a href="#" class="btn btn-primary btn-sm">View</a>
+            <a href="#" class="btn btn-sm align-content-center" style="width:60px;height:40px;background:#A63446;color:#E1DACB;">View</a>
           </div>
         </div>
       </div>
@@ -155,25 +198,25 @@
     <div class="d-flex gap-3 mb-4 justify-content-center">
       <a href="https://www.linkedin.com/in/hazel-phonie-palang-02306b359/" target="_blank"
       class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-      style="width:45px;height:45px;background:#E7DECD;color:#804E49;">
+      style="width:45px;height:45px;background:#E7DECD;color:#A63446;">
           <i class="bi bi-linkedin"></i>
       </a>
 
       <a href="https://github.com/HazelPhoniePalang" target="_blank"
       class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-      style="width:45px;height:45px;background:#E7DECD;color:#804E49;">
+      style="width:45px;height:45px;background:#E7DECD;color:#A63446;">
           <i class="bi bi-github"></i>
       </a>
 
       <a href="https://www.instagram.com/hnrhzle/" target="_blank"
       class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-      style="width:45px;height:45px;background:#E7DECD;color:#804E49;">
+      style="width:45px;height:45px;background:#E7DECD;color:#A63446;">
           <i class="bi bi-instagram"></i>
       </a>
 
       <a href="https://www.facebook.com/hazelphonie" target="_blank"
       class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-      style="width:45px;height:45px;background:#E7DECD;color:#804E49;">
+      style="width:45px;height:45px;background:#E7DECD;color:#A63446;">
           <i class="bi bi-facebook"></i>
       </a>
     </div>
@@ -183,7 +226,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="text-center py-3" style="background-color: #E7DECD; color: #804E49;">
+<footer class="text-center py-3" style="background-color: #E7DECD; color: #A63446;">
   <p class="mb-0">© 2026 Hazel Portfolio</p>
   
   
