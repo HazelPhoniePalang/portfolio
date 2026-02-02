@@ -1,237 +1,863 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hazel | Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hazel | Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Exo:100");
 
-  <!-- Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+      @-webkit-keyframes bg-scrolling-reverse {
+        100% {
+          background-position: 50px 50px;
+        }
+      }
 
-  <style>
-    .skill-card {
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
+      @-moz-keyframes bg-scrolling-reverse {
+        100% {
+          background-position: 50px 50px;
+        }
+      }
 
-    .skill-card:hover {
-      background-color: #E1DACB !important;
-      color: #A63446 !important;
-    }
+      @-o-keyframes bg-scrolling-reverse {
+        100% {
+          background-position: 50px 50px;
+        }
+      }
 
-    .skill-card:hover h5,
-    .skill-card:hover i {
-      color: #A63446 !important;
-    }
+      @keyframes bg-scrolling-reverse {
+        100% {
+          background-position: 50px 50px;
+        }
+      }
 
-    .card {
-      transition: all 0.3s ease;
-    }
+      body {
+        margin-top: 3.5rem;
 
-    .card:hover {
-      background-color: #E1DACB;
-      transform: translateY(-6px);
-    }
+        color: #999;
+        backface-visibility: var(50%);
 
-    .card:hover .card-title,
-    .card:hover .card-text {
-      color: #A63446;
-    }
+        font:
+          400 16px/1.5 exo,
+          ubuntu,
+          "segoe ui",
+          helvetica,
+          arial,
+          sans-serif;
 
-    .card:hover .btn {
-      background-color: #A63446;
-      color: #E1DACB;
-    }
+        text-align: center;
 
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC")
+          repeat 0 0;
 
-  </style>
+        -webkit-animation: bg-scrolling-reverse 0.92s infinite linear;
 
-</head>
-<!--data-bs-spy="scroll" data-bs-target="#navMenu"-->
-<body data-bs-spy="scroll" data-bs-target="#navMenu">
+        -moz-animation: bg-scrolling-reverse 0.92s infinite linear;
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" style="background-color: #080E21; ">
-  <div class="container" >
-    <a class="navbar-brand fw-bold fs-4 f" style="color: #E1DACB; font-weight: bolder; font-style: italic; " href="#home">Hazel ♡</a>
+        -o-animation: bg-scrolling-reverse 0.92s infinite linear;
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        animation: bg-scrolling-reverse 0.92s infinite linear;
+      }
 
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto ">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      /* Dark + blur layer */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(200, 125, 125, 0.35); /* DARKNESS LEVEL */
+        backdrop-filter: blur(4px); /* BLUR LEVEL */
+        -webkit-backdrop-filter: blur(4px);
+        z-index: -1;
+      }
 
-<!-- HERO -->
-<section id="home">
-  <div class="container-fluid m-auto vh-100 d-flex flex-column justify-content-center align-items-center text-white mb-5" style="background-color: #0A122A;">
-    <h1 class="display-4 fw-bold" style="color: #E1DACB;">♡ Hi, I'm Hazel Phonie ♡</h1>
-    <p class="lead fst-italic" style="color: #E1DACB;">An IT Student, and a Front-End Developer</p>
-    <a href="#projects" class="btn btn-light btn-lg mt-3" style="background-color: #A63446; color: #E1DACB; border-color: #A63446;">View Projects</a>
-  </div>
-</section>
+      section {
+        scroll-margin-top: 110px;
+      }
 
-<!-- ABOUT -->
-<section id="about" class="py-5">
-  <div class="container mb-5">
-    <div class="row align-items-center">
-      <div class="col-lg-5 mb-4">
-        <img 
-          src="https://scontent.fdvo3-1.fna.fbcdn.net/v/t39.30808-6/505986659_122171520116360785_6923013819456449190_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeExnp-71easmRoAMajH3Ln4GEQtxEtgyKgYRC3ES2DIqAqjGowZarAO-90phQgNFtSQ4xUqnjTRbj8hTnoYZa4N&_nc_ohc=6Rb2wHoGfGsQ7kNvwGQ3ALk&_nc_oc=Adkbgt70745okGfeZ8QVvaJW8lCzF0syD_D4hlNadgZ6k_PKs5QaCVKP_XztuFjRcFw&_nc_zt=23&_nc_ht=scontent.fdvo3-1.fna&_nc_gid=UL9HjQr4xEU8v8IOFXqf_g&oh=00_AfojQzHjCqiPVCgr3cfC711ptpihee-mMmLrZ0F42EAthQ&oe=698123D9"
-          class="img-fluid rounded shadow-sm"
-          style="border: 6px solid #A63446;"
+      /* Enhanced Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #1a1a1a;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .display-4 span {
+        color: #8b1538; /* Maroon accent */
+        background: linear-gradient(45deg, #8b1538, #dc3545);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* =============================================
+        NAVIGATION STYLING
+        ============================================= */
+
+      #mainNav {
+        background: rgba(39, 38, 38, 0.85) !important;
+        backdrop-filter: blur(20px) !important;
+        border-bottom: 3px solid rgba(139, 21, 56, 0.6) !important;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.1),
+          0 0 20px rgba(139, 21, 56, 0.3) !important;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      #mainNav:hover {
+        box-shadow:
+          0 12px 40px rgba(0, 0, 0, 0.15),
+          0 0 25px rgba(139, 21, 56, 0.4) !important;
+      }
+
+      /* Navigation Links */
+      #mainNav .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        transition: all 0.3s ease;
+        padding: 0.8rem 1rem !important;
+        border-radius: 8px;
+        position: relative;
+      }
+
+      #mainNav .nav-link:hover {
+        color: #ffffff !important;
+        background: rgba(139, 21, 56, 0.2);
+        transform: translateY(-2px);
+      }
+
+      #mainNav .nav-link.active {
+        color: #8b1538 !important;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .bigger-icon {
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      #mainNav .nav-link:hover .bigger-icon {
+        transform: scale(1.1);
+        color: #ff6b8a;
+      }
+
+      /* =============================================
+        CARD STYLING
+        ============================================= */
+      .card {
+        background: #ffffff;
+        border: none;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 2rem;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #8b1538, #dc3545, #8b1538);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow:
+          0 15px 40px rgba(0, 0, 0, 0.15),
+          0 0 20px rgba(139, 21, 56, 0.1);
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .card-title {
+        color: #1a1a1a;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+      }
+
+      .card-subtitle {
+        color: #8b1538 !important;
+        font-weight: 500;
+      }
+
+      .card-text {
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      /* Card Images */
+      .card img.card-img-top {
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover img.card-img-top {
+        transform: scale(1.05);
+      }
+
+      /* =============================================
+        BUTTON STYLING
+        ============================================= */
+      .btn-style,
+      .btn {
+        background: linear-gradient(45deg, #8b1538, #dc3545);
+        color: white !important;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        border-radius: 25px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-style:hover,
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(139, 21, 56, 0.3);
+        background: linear-gradient(45deg, #a01846, #e74c3c);
+      }
+
+      .btn-style::before,
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn-style:hover::before,
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      /* =============================================
+        SKILL ICONS
+        ============================================= */
+      .skill-icon {
+        transition: all 0.3s ease;
+        filter: grayscale(0.3);
+        cursor: pointer;
+      }
+
+      .skill-icon:hover {
+        transform: scale(1.2) rotate(5deg);
+        filter: grayscale(0);
+        filter: drop-shadow(0 8px 20px rgba(139, 21, 56, 0.2));
+      }
+
+      .scroller {
+        max-width: 800px;
+      }
+
+      /* =============================================
+        NEON EFFECTS & CONTACT SECTION
+        ============================================= */
+      .neon-text {
+        color: #8b1538; /* Maroon accent */
+        background: linear-gradient(45deg, #8b1538, #dc3545);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .neon-box {
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid rgba(139, 21, 56, 0.3);
+        box-shadow:
+          0 0 30px rgba(139, 21, 56, 0.1),
+          inset 0 0 30px rgba(139, 21, 56, 0.05);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .neon-box:hover {
+        border-color: rgba(139, 21, 56, 0.5);
+        box-shadow: 0 0 40px rgba(139, 21, 56, 0.2);
+      }
+
+      .neon-btn {
+        background: linear-gradient(45deg, #8b1538, #dc3545) !important;
+        color: white !important;
+        border: 2px solid transparent !important;
+        transition: all 0.3s ease;
+      }
+
+      .neon-btn:hover {
+        background: linear-gradient(45deg, #dc3545, #8b1538) !important;
+        box-shadow: 0 0 20px rgba(139, 21, 56, 0.4) !important;
+        transform: translateY(-2px);
+      }
+
+      /* =============================================
+        FORM CONTROLS
+        ============================================= */
+      .form-control {
+        border: 2px solid rgba(139, 21, 56, 0.1);
+        border-radius: 12px;
+        padding: 0.8rem 1rem;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .form-control:focus {
+        border-color: rgba(139, 21, 56, 0.5);
+        box-shadow: 0 0 0 0.2rem rgba(139, 21, 56, 0.1);
+        background: #ffffff;
+      }
+
+      /* =============================================
+        SOCIAL LINKS & FOOTER
+        ============================================= */
+      .social {
+        color: #8b1538;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.4rem;
+        border-radius: 50%;
+        background: rgba(139, 21, 56, 0.1);
+      }
+
+      .social:hover {
+        color: #ffffff;
+        background: #8b1538;
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 8px 20px rgba(139, 21, 56, 0.3);
+      }
+
+      /* =============================================
+        ANIMATIONS & UTILITY CLASSES
+        ============================================= */
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        animation: reveal 1s ease forwards;
+        transform: translateY(40px);
+        transition: 1s;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: none;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .style-label {
+        color: #8b1538;
+        position: relative;
+        display: inline-block;
+      }
+
+      .style-label::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #8b1538, #dc3545);
+        border-radius: 2px;
+      }
+
+      /* =============================================
+        RESPONSIVE ENHANCEMENTS
+        ============================================= */
+      @media (max-width: 768px) {
+        .card:hover {
+          transform: translateY(-4px) scale(1.01);
+        }
+
+        .skill-icon:hover {
+          transform: scale(1.1);
+        }
+
+        #mainNav .nav-link:hover {
+          transform: none;
+        }
+      }
+
+      /* Typing */
+      .typewriter {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 0.05em solid #8b1538;
+        white-space: nowrap;
+        letter-spacing: 0.05em;
+        animation:
+          typing 3.5s steps(14, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      /* The typing effect */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      /* Cursor blink */
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #8b1538;
+        }
+      }
+
+      /* =============================================
+        SMOOTH SCROLLING
+        ============================================= */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Section Spacing Enhancement */
+      section {
+        padding: 4rem 0;
+      }
+
+      #home {
+        padding: 2rem 0;
+      }
+
+      /* Profile Image Enhancement */
+      img[alt="my photo"] {
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 30px #8b1538;
+      }
+
+      img[alt="my photo"]:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px #8b1538;
+      }
+    </style>
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#mainNav">
+    <nav
+      id="mainNav"
+      class="navbar navbar-expand-md navbar-dark shadow-dark-lg m-md-2 rounded-5 position-fixed top-0 start-50 translate-middle-x"
+      style="
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(12px);
+        border-bottom: 3px solid rgba(255, 46, 166, 0.4);
+        box-shadow: 0 0 18px rgba(255, 46, 166, 0.35);
+      "
+    >
+      <div class="container justify-content-end">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
         >
-</div>
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="col-lg-7">
-        <h2 class="fw-bold fw-semibold" style="color: #A63446; font-style: italic;">About Me ♡</h2>
-        <p class="text-muted" style="color: #0A122A;">
-          Hi! I am Hazel Phonie P. Palang, you can call me "Hazel" or "Zel"
-          I am an IT student in University of Mindanao, currently interested in Web developing, and particularly anything that involves designing.
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav m-auto justify-content-center">
+            <li class="nav-item">
+              <a href="#home" class="nav-link me-lg-4">
+                <i class="bi bi-house bigger-icon"></i>
+                <span class="d-sm-none">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#service" class="nav-link me-lg-4">
+                <i class="bi bi-gear bigger-icon"></i>
+                <span class="d-sm-none">Service</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#skills" class="nav-link me-lg-4">
+                <i class="bi bi-code bigger-icon"></i>
+                <span class="d-sm-none">Skills</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#projects" class="nav-link me-lg-4">
+                <i class="bi bi-folder bigger-icon"></i>
+                <span class="d-sm-none">Projects</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">
+                <i class="bi bi-envelope bigger-icon"></i>
+                <span class="d-sm-none">Contact me</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-          I enjoy learning new skills making projects involving HTML, CSS, BOOTSTRAP, and Javascript.
+    <section id="home">
+      <div
+        class="container-md vh-100 d-flex flex-column align-items-center mt-5"
+      >
+        <div class="row">
+          <div class="col-lg-6 m-auto mt-auto reveal">
+            <h4 class="display-4 fw-bolder m-3">
+              Hi, I'm a <br /><span class="typewriter mt-1">Web Developer</span>
+            </h4>
+            <p
+              class="text-muted ms-3 mt-0"
+              style="color: #3c1f1f; font-weight: 900"
+            >
+              I am Hazel Phonie P. Palang, an IT student in University of
+              Mindanao, currently interested in Web developing, and particularly
+              anything that involves designing.
+            </p>
+            <a href="bio.html" class="btn btn-style border-black rounded-5 m-3">
+              Explore more.</a
+            >
+          </div>
+          <div class="col-lg-5 text-center floating reveal">
+            <img
+              src="image/img1.jpg"
+              alt="my photo"
+              class="border-black rounded-circle floating"
+              style="width: 250px; height: auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service" class="py-5 mt-5">
+      <div class="container justify-content-center">
+        <div class="d-flex justify-content-center">
+          <h4 class="style-label fw-bold mb-5 reveal">Services</h4>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 d-flex justify-content-center reveal">
+            <div class="card h-100" style="width: 20rem">
+              <div class="card-body text-center">
+                <h5 class="card-title m-4">Frontend Development</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Clean, Responsive Interfaces
+                </h6>
+                <p class="card-text m-3">
+                  I build fast, responsive, and accessible user interfaces using
+                  modern web technologies that work smoothly across all devices.
+                </p>
+                <a href="#" class="btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-flex justify-content-center reveal">
+            <div class="card h-100" style="width: 20rem">
+              <div class="card-body text-center">
+                <h5 class="card-title m-4">Website Redesign</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Modernize Your Online Presence
+                </h6>
+                <p class="card-text m-3">
+                  I redesign outdated websites to improve usability,
+                  performance, and visual appeal without breaking existing
+                  content.
+                </p>
+                <a href="#" class="btn m-4">Learn More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-flex justify-content-center reveal">
+            <div class="card h-100" style="width: 20rem">
+              <div class="card-body text-center">
+                <h5 class="card-title m-4">Responsive Web Design</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Mobile-First Layouts
+                </h6>
+                <p class="card-text m-2">
+                  I create layouts that adapt seamlessly to phones, tablets, and
+                  desktops for a consistent user experience.
+                </p>
+                <a href="#" class="btn m-3">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row g-4 justify-content-center mt-4 reveal">
+          <div class="col-lg-4 d-flex justify-content-center">
+            <div class="card h-100" style="width: 20rem">
+              <div class="card-body text-center">
+                <h5 class="card-title m-4">Landing Page Development</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Pages That Convert
+                </h6>
+                <p class="card-text">
+                  I design and develop focused landing pages built for speed,
+                  clarity, and conversion.
+                </p>
+                <a href="#" class="btn m-4">Learn More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-flex justify-content-center reveal">
+            <div class="card h-100" style="width: 20rem">
+              <div class="card-body text-center">
+                <h5 class="card-title m-4">Website Maintenance</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Reliable Ongoing Support
+                </h6>
+                <p class="card-text m-3">
+                  I handle updates, bug fixes, and performance improvements so
+                  your website stays secure and up to date.
+                </p>
+                <a href="#" class="btn m-4">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container-fluid py-5 text-center mt-5">
+        <h2 class="style-label fw-bold mb-4 mb-lg-5 reveal">Skills</h2>
+
+        <div class="scroller mx-auto">
+          <div
+            class="d-flex justify-content-center align-items-center gap-4 flex-wrap reveal"
+          >
+            <img
+              class="skill-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+              alt="Java"
+              style="width: 80px; height: auto"
+            />
+            <img
+              class="skill-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+              alt="Python"
+              style="width: 80px; height: auto"
+            />
+            <img
+              class="skill-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"
+              alt="R"
+              style="width: 80px; height: auto"
+            />
+            <img
+              class="skill-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="HTML"
+              style="width: 80px; height: auto"
+            />
+            <img
+              class="skill-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              alt="CSS"
+              style="width: 80px; height: auto"
+            />
+            <img
+              class="skill-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+              style="width: 80px; height: auto"
+            />
+            <img
+              class="skill-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+              alt="Bootstrap"
+              style="width: 80px; height: auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-5">
+      <div class="container text-center">
+        <h2 class="style-label fw-bold mb-5 reveal">Projects</h2>
+        <div class="row g-4">
+          <div class="col-md-4 reveal">
+            <div class="card shadow h-100">
+              <img src="https://picsum.photos/400/250" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">Project One</h5>
+                <p class="card-text">
+                  Simple responsive website using HTML & CSS.
+                </p>
+                <a href="#" class="btn btn-primary btn-sm">View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 reveal">
+            <div class="card shadow h-100">
+              <img src="https://picsum.photos/401/250" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">Project Two</h5>
+                <p class="card-text">
+                  Bootstrap landing page with grid system.
+                </p>
+                <a href="#" class="btn btn-primary btn-sm">View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 reveal">
+            <div class="card shadow h-100">
+              <img src="https://picsum.photos/402/250" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">Project Three</h5>
+                <p class="card-text">Personal portfolio website.</p>
+                <a href="#" class="btn btn-primary btn-sm">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5">
+      <div class="container reveal d-flex justify-content-center">
+        <div
+          class="neon-box p-4 rounded-4 text-center floating mb-0"
+          style="max-width: 600px; width: 100%"
+        >
+          <h2 class="style-label">Get In Touch</h2>
+
+          <input type="text" class="form-control mb-3" placeholder="Name" />
+          <input type="email" class="form-control mb-3" placeholder="Email" />
+          <textarea
+            class="form-control mb-3"
+            rows="4"
+            placeholder="Message"
+          ></textarea>
+
+          <button class="btn neon-btn rounded-5 border-0" onclick="fakeSend()">
+            Send Message
+          </button>
+
+          <p id="sentMsg" class="mt-3"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="text-center py-3 border-top"
+      style="background-color: #ffffff"
+    >
+      <h6 class="style-label">Let's connect!</h6>
+      <div class="d-inline justify-content-center">
+        <div class="links">
+          <a
+            href="https://www.linkedin.com/in/hazel-phonie-palang-02306b359/"
+            target="_blank"
+            class="social m-2 rounded-circle"
+          >
+            <i class="bi bi-linkedin"></i>
+          </a>
+
+          <a
+            href="https://github.com/HazelPhoniePalang"
+            target="_blank"
+            class="social m-2 rounded-circle"
+          >
+            <i class="bi bi-github"></i>
+          </a>
+
+          <a
+            href="https://www.instagram.com/hnrhzle/"
+            target="_blank"
+            class="social m-2 rounded-circle"
+          >
+            <i class="bi bi-instagram"></i>
+          </a>
+
+          <a
+            href="https://www.facebook.com/hazelphonie"
+            target="_blank"
+            class="social m-2 rounded-circle"
+          >
+            <i class="bi bi-facebook"></i>
+          </a>
+        </div>
+        <p class="mt-2" style="font-size: small">
+          © 2026 Hazel Portfolio. All rights reserved.
         </p>
-        <a href="bio.html" target="_blank" class="btn btn-primary" style="background-color: #A63446; border-color: #0A122A;">Read More</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container-fluid pt-3 pb-5 mb-5 mt-5 text-center" style="background-color: #0A122A; color: #E1DACB;">
-    <h2 class="fw-bold mb-4 mt-5">My Skills</h2>
-
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-2">
-        <div class="skill-card text-white rounded text-center p-3" style="color: #E1DACB; background-color: #A63446;">
-          <i class="bi bi-filetype-html fs-1"></i>
-          <h5>HTML</h5>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="skill-card text-white rounded text-center p-3" style="color: #E1DACB; background-color: #A63446;">
-          <i class="bi bi-css fs-1"></i>
-          <h5>CSS</h5>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="skill-card text-white rounded text-center p-3" style="color: #E1DACB; background-color: #A63446;">
-          <i class="bi bi-bootstrap fs-1"></i>
-          <h5>Bootstrap</h5>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="skill-card text-white rounded text-center p-3" style="color: #E1DACB; background-color: #A63446;">
-          <i class="bi bi-filetype-js fs-1"></i>
-          <h5>JavaScript</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- PROJECTS -->
-<section id="projects" class="py-5">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4" style="color: #A63446;">Projects</h2>
-
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="https://picsum.photos/400/250" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Project One</h5>
-            <p class="card-text">Simple responsive website using HTML & CSS.</p>
-            <a href="#" class="btn  btn-sm align-content-center" style="width:60px;height:40px;background:#A63446;color:#E1DACB;">View</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="https://picsum.photos/401/250" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Project Two</h5>
-            <p class="card-text">Bootstrap landing page with grid system.</p>
-            <a href="#" class="btn btn-sm align-content-center" style="width:60px;height:40px;background:#A63446;color:#E1DACB;">View</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="https://picsum.photos/402/250" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Project Three</h5>
-            <p class="card-text">Personal portfolio website.</p>
-            <a href="#" class="btn btn-sm align-content-center" style="width:60px;height:40px;background:#A63446;color:#E1DACB;">View</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="text-white py-5 mb-2" style="background-color: #0A122A;">
-  <div class="container text-center">
-    <h2 class="fw-bold">Contact Me</h2>
-    <div class="d-flex gap-3 mb-4 justify-content-center">
-      <a href="https://www.linkedin.com/in/hazel-phonie-palang-02306b359/" target="_blank"
-      class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-      style="width:45px;height:45px;background:#E7DECD;color:#A63446;">
-          <i class="bi bi-linkedin"></i>
-      </a>
-
-      <a href="https://github.com/HazelPhoniePalang" target="_blank"
-      class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-      style="width:45px;height:45px;background:#E7DECD;color:#A63446;">
-          <i class="bi bi-github"></i>
-      </a>
-
-      <a href="https://www.instagram.com/hnrhzle/" target="_blank"
-      class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-      style="width:45px;height:45px;background:#E7DECD;color:#A63446;">
-          <i class="bi bi-instagram"></i>
-      </a>
-
-      <a href="https://www.facebook.com/hazelphonie" target="_blank"
-      class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-      style="width:45px;height:45px;background:#E7DECD;color:#A63446;">
-          <i class="bi bi-facebook"></i>
-      </a>
-    </div>
-    <p><i class="bi bi-envelope"></i> hazelphoniepalang@gmail.com</p>
-    <p><i class="bi bi-phone"></i> +63 9268583603</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="text-center py-3" style="background-color: #E7DECD; color: #A63446;">
-  <p class="mb-0">© 2026 Hazel Portfolio</p>
-  
-  
-
-</footer>
-
-</body>
+    </footer>
+  </body>
 </html>
