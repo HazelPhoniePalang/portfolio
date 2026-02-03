@@ -387,21 +387,15 @@
 
       .reveal {
         opacity: 0;
-        animation: reveal 1s ease forwards;
         transform: translateY(40px);
-        transition: 1s;
+        animation-name: fade-up;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        animation-timeline: view();
+        animation-range: entry 20% cover 40%;
       }
 
-      .reveal.active {
-        opacity: 1;
-        transform: none;
-      }
-
-      @keyframes reveal {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
+      @keyframes fade-up {
         to {
           opacity: 1;
           transform: translateY(0);
@@ -502,6 +496,19 @@
         transform: scale(1.05);
         box-shadow: 0 15px 40px #8b1538;
       }
+
+      .sent-msg {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: 0.4s ease;
+        color: #e10600;
+        font-weight: 600;
+      }
+
+      #sent:target {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#mainNav">
@@ -587,7 +594,7 @@
             <img
               src="image/img1.jpg"
               alt="my photo"
-              class="border-black rounded-circle floating"
+              class="border-black rounded-circle floating reveal"
               style="width: 250px; height: auto"
             />
           </div>
@@ -595,7 +602,7 @@
       </div>
     </section>
 
-    <section id="service" class="py-5 mt-5">
+    <section id="service" class="py-5 mt-2 reveal">
       <div class="container justify-content-center">
         <div class="d-flex justify-content-center">
           <h4 class="style-label fw-bolder mb-5 reveal">Services</h4>
@@ -603,7 +610,7 @@
 
         <!-- Row 1 -->
         <div class="row g-4 justify-content-center">
-          <div class="col-lg-4 d-flex justify-content-center reveal">
+          <div class="col-lg-4 d-flex justify-content-center">
             <div class="card h-100" style="width: 20rem">
               <div class="card-body text-center">
                 <h5 class="card-title m-4">Frontend Development</h5>
@@ -654,8 +661,8 @@
         </div>
 
         <!-- Row 2 -->
-        <div class="row g-4 justify-content-center mt-4 reveal">
-          <div class="col-lg-4 d-flex justify-content-center">
+        <div class="row g-4 justify-content-center mt-4">
+          <div class="col-lg-4 d-flex justify-content-center reveal">
             <div class="card h-100" style="width: 20rem">
               <div class="card-body text-center">
                 <h5 class="card-title m-4">Landing Page Development</h5>
@@ -690,52 +697,52 @@
       </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="reveal">
       <div class="container-fluid py-5 text-center mt-5">
-        <h2 class="style-label fw-bold mb-4 mb-lg-5 reveal">Skills</h2>
+        <h2 class="style-label fw-bold mb-4 mb-lg-5">Skills</h2>
 
         <div class="scroller mx-auto">
           <div
             class="d-flex justify-content-center align-items-center gap-4 flex-wrap reveal"
           >
             <img
-              class="skill-icon"
+              class="skill-icon reveal"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
               alt="Java"
               style="width: 80px; height: auto"
             />
             <img
-              class="skill-icon"
+              class="skill-icon reveal"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
               alt="Python"
               style="width: 80px; height: auto"
             />
             <img
-              class="skill-icon"
+              class="skill-icon reveal"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"
               alt="R"
               style="width: 80px; height: auto"
             />
             <img
-              class="skill-icon"
+              class="skill-icon reveal"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
               alt="HTML"
               style="width: 80px; height: auto"
             />
             <img
-              class="skill-icon"
+              class="skill-icon reveal"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
               alt="CSS"
               style="width: 80px; height: auto"
             />
             <img
-              class="skill-icon"
+              class="skill-icon reveal"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
               alt="JavaScript"
               style="width: 80px; height: auto"
             />
             <img
-              class="skill-icon"
+              class="skill-icon reveal"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
               alt="Bootstrap"
               style="width: 80px; height: auto"
@@ -745,9 +752,9 @@
       </div>
     </section>
 
-    <section id="projects" class="py-5">
+    <section id="projects" class="py-5 reveal">
       <div class="container text-center">
-        <h2 class="style-label fw-bold mb-5 reveal">Projects</h2>
+        <h2 class="style-label fw-bold mb-5">Projects</h2>
         <div class="row g-4">
           <div class="col-md-4 reveal">
             <div class="card shadow h-100">
@@ -762,7 +769,7 @@
             </div>
           </div>
 
-          <div class="col-md-4 reveal">
+          <div class="col-md-4">
             <div class="card shadow h-100">
               <img src="https://picsum.photos/401/250" class="card-img-top" />
               <div class="card-body">
@@ -775,7 +782,7 @@
             </div>
           </div>
 
-          <div class="col-md-4 reveal">
+          <div class="col-md-4">
             <div class="card shadow h-100">
               <img src="https://picsum.photos/402/250" class="card-img-top" />
               <div class="card-body">
@@ -789,7 +796,7 @@
       </div>
     </section>
 
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5 reveal m-0">
       <div class="container reveal d-flex justify-content-center">
         <div
           class="neon-box p-4 rounded-4 text-center floating mb-0"
@@ -797,19 +804,21 @@
         >
           <h2 class="style-label">Get In Touch</h2>
 
-          <input type="text" class="form-control mb-3" placeholder="Name" />
-          <input type="email" class="form-control mb-3" placeholder="Email" />
-          <textarea
-            class="form-control mb-3"
-            rows="4"
-            placeholder="Message"
-          ></textarea>
+          <form action="">
+            <input type="text" class="form-control mb-3" placeholder="Name" />
+            <input type="email" class="form-control mb-3" placeholder="Email" />
+            <textarea
+              class="form-control mb-3"
+              rows="4"
+              placeholder="Message"
+            ></textarea>
 
-          <button class="btn neon-btn rounded-5 border-0" onclick="fakeSend()">
-            Send Message
-          </button>
+            <button class="btn neon-btn rounded-5 border-0">
+              Send Message
+            </button>
+          </form>
 
-          <p id="sentMsg" class="mt-3"></p>
+          <p class="sent-msg mt-3">Message sent successfully.</p>
         </div>
       </div>
     </section>
