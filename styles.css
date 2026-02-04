@@ -1,5 +1,5 @@
 /* Import Professional Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap");
 
 /* CSS Variables */
 :root {
@@ -24,10 +24,13 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--primary-black);
   background-color: var(--light-gray);
+}
+html {
+  scroll-behavior: smooth;
 }
 
 .main-wrapper {
@@ -36,14 +39,18 @@ body {
 
 /* Profile Panel */
 .profile-panel {
-  background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-black) 0%,
+    var(--secondary-black) 100%
+  );
   color: var(--pure-white);
   position: relative;
   overflow: hidden;
 }
 
 .profile-panel::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -83,7 +90,7 @@ body {
 }
 
 .profile-name {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -141,7 +148,7 @@ body {
 }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--primary-black);
@@ -152,7 +159,7 @@ body {
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   flex: 1;
   height: 1px;
   background: var(--border-gray);
@@ -244,7 +251,7 @@ body {
 }
 
 .info-list li::before {
-  content: '→';
+  content: "→";
   position: absolute;
   left: 0;
   color: var(--accent-maroon);
@@ -257,7 +264,11 @@ body {
 
 /* Call to Action */
 .cta-section {
-  background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+  background: linear-gradient(
+    135deg,
+    var(--primary-black),
+    var(--secondary-black)
+  );
   color: var(--pure-white);
   padding: 3rem 2rem;
   border-radius: 15px;
@@ -266,7 +277,7 @@ body {
 }
 
 .cta-content h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -336,24 +347,24 @@ body {
   .profile-panel {
     min-height: auto;
   }
-  
+
   .profile-content {
     height: auto;
     padding: 2rem 1.5rem;
   }
-  
+
   .content-wrapper {
     padding: 2rem 1.5rem;
   }
-  
+
   .profile-name {
     font-size: 1.8rem;
   }
-  
+
   .section-title {
     font-size: 1.5rem;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;
@@ -365,15 +376,15 @@ body {
     width: 150px;
     height: 150px;
   }
-  
+
   .content-wrapper {
     padding: 1.5rem 1rem;
   }
-  
+
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
-  
+
   .cta-section {
     padding: 2rem 1.5rem;
   }
