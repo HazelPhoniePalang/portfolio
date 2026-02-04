@@ -19,30 +19,12 @@
       rel="stylesheet"
     />
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Exo:100");
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
-      @-webkit-keyframes bg-scrolling-reverse {
-        100% {
-          background-position: 50px 50px;
-        }
-      }
-
-      @-moz-keyframes bg-scrolling-reverse {
-        100% {
-          background-position: 50px 50px;
-        }
-      }
-
-      @-o-keyframes bg-scrolling-reverse {
-        100% {
-          background-position: 50px 50px;
-        }
-      }
-
-      @keyframes bg-scrolling-reverse {
-        100% {
-          background-position: 50px 50px;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       body {
@@ -54,9 +36,7 @@
         font:
           400 16px/1.5 exo,
           ubuntu,
-          "segoe ui",
-          helvetica,
-          arial,
+          "Space Grotesk",
           sans-serif;
 
         text-align: center;
@@ -272,23 +252,42 @@
         left: 100%;
       }
 
-      /* =============================================
-        SKILL ICONS
-        ============================================= */
-      .skill-icon {
-        transition: all 0.3s ease;
-        filter: grayscale(0.3);
-        cursor: pointer;
+      /* ============================================
+   SKILLS SECTION
+   ============================================ */
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 3rem;
       }
 
-      .skill-icon:hover {
-        transform: scale(1.2) rotate(5deg);
-        filter: grayscale(0);
-        filter: drop-shadow(0 8px 20px rgba(139, 21, 56, 0.2));
+      .skill-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1rem 1.5rem;
+        background: var(--white);
+        border-radius: 50px;
+        box-shadow: 0 2px 15px var(--shadow);
+        transition: var(--transition);
       }
 
-      .scroller {
-        max-width: 800px;
+      .skill-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px var(--shadow-hover);
+      }
+
+      .skill-item img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+
+      .skill-item span {
+        font-weight: 600;
+        color: var(--text-primary);
       }
 
       /* =============================================
@@ -590,7 +589,7 @@
               Explore more.</a
             >
           </div>
-          <div class="col-lg-5 text-center floating reveal">
+          <div class="col-lg-5 my-5 text-center floating reveal">
             <img
               src="image/img1.jpg"
               alt="my photo"
@@ -602,10 +601,10 @@
       </div>
     </section>
 
-    <section id="service" class="py-5 mt-2 reveal">
+    <section id="service" class="py-5 mt-5 reveal">
       <div class="container justify-content-center">
         <div class="d-flex justify-content-center">
-          <h4 class="style-label fw-bolder mb-5 reveal">Services</h4>
+          <h4 class="style-label fw-bolder mb-5 reveal">What I do.</h4>
         </div>
 
         <!-- Row 1 -->
@@ -697,57 +696,57 @@
       </div>
     </section>
 
-    <section id="skills" class="reveal">
-      <div class="container-fluid py-5 text-center mt-5">
-        <h2 class="style-label fw-bold mb-4 mb-lg-5">Skills</h2>
-
-        <div class="scroller mx-auto">
-          <div
-            class="d-flex justify-content-center align-items-center gap-4 flex-wrap reveal"
-          >
-            <img
-              class="skill-icon reveal"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-              alt="Java"
-              style="width: 80px; height: auto"
-            />
-            <img
-              class="skill-icon reveal"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-              alt="Python"
-              style="width: 80px; height: auto"
-            />
-            <img
-              class="skill-icon reveal"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"
-              alt="R"
-              style="width: 80px; height: auto"
-            />
-            <img
-              class="skill-icon reveal"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-              alt="HTML"
-              style="width: 80px; height: auto"
-            />
-            <img
-              class="skill-icon reveal"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-              alt="CSS"
-              style="width: 80px; height: auto"
-            />
-            <img
-              class="skill-icon reveal"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-              alt="JavaScript"
-              style="width: 80px; height: auto"
-            />
-            <img
-              class="skill-icon reveal"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-              alt="Bootstrap"
-              style="width: 80px; height: auto"
-            />
-          </div>
+    <section id="skills">
+      <h2 class="section-title reveal">Skills & Technologies</h2>
+      <div class="skills-container">
+        <div class="skill-item reveal">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+            alt="Java"
+          />
+          <span>Java</span>
+        </div>
+        <div class="skill-item reveal">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            alt="Python"
+          />
+          <span>Python</span>
+        </div>
+        <div class="skill-item reveal">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"
+            alt="R"
+          />
+          <span>R</span>
+        </div>
+        <div class="skill-item reveal">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+            alt="HTML5"
+          />
+          <span>HTML5</span>
+        </div>
+        <div class="skill-item reveal">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+            alt="CSS3"
+          />
+          <span>CSS3</span>
+        </div>
+        <div class="skill-item reveal">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript"
+          />
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-item reveal">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+            alt="Bootstrap"
+          />
+          <span>Bootstrap</span>
         </div>
       </div>
     </section>
