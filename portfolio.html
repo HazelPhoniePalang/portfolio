@@ -28,8 +28,7 @@
       }
 
       body {
-        margin-top: 3.5rem;
-
+        margin-top: 0;
         color: #999;
         backface-visibility: var(50%);
 
@@ -50,17 +49,23 @@
         content: "";
         position: fixed;
         inset: 0;
-        background: rgba(222, 222, 222, 0.35); /* DARKNESS LEVEL */
-        backdrop-filter: blur(4px); /* BLUR LEVEL */
+        background: rgba(222, 222, 222, 0.35);
+        backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         z-index: -1;
       }
 
+      /* All sections - improved spacing */
       section {
-        scroll-margin-top: 110px;
+        scroll-margin-top: 100px;
+        min-height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6rem 0;
       }
 
-      /* Enhanced Typography */
+      /* Enhanced Typography with better spacing */
       h1,
       h2,
       h3,
@@ -69,11 +74,11 @@
       h6 {
         color: #1a1a1a;
         font-weight: 600;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
       }
 
       .display-4 span {
-        color: #8b1538; /* Maroon accent */
+        color: #8b1538;
         background: linear-gradient(45deg, #8b1538, #dc3545);
         background-clip: text;
         -webkit-background-clip: text;
@@ -81,7 +86,7 @@
       }
 
       /* =============================================
-        NAVIGATION STYLING
+        NAVIGATION STYLING - IMPROVED SPACING
         ============================================= */
 
       #mainNav {
@@ -93,6 +98,9 @@
           0 0 20px rgba(139, 21, 56, 0.3) !important;
         transition: all 0.3s ease;
         z-index: 1000;
+        width: 50%;
+        max-width: 1000px;
+        padding: 0.5rem 1rem;
       }
 
       #mainNav:hover {
@@ -101,13 +109,14 @@
           0 0 25px rgba(139, 21, 56, 0.4) !important;
       }
 
-      /* Navigation Links */
+      /* Navigation Links - improved spacing */
       #mainNav .nav-link {
         color: rgba(255, 255, 255, 0.9) !important;
         transition: all 0.3s ease;
-        padding: 0.8rem 1rem !important;
+        padding: 0.6rem 1.2rem !important;
         border-radius: 8px;
         position: relative;
+        margin: 0 0.25rem;
       }
 
       #mainNav .nav-link:hover {
@@ -122,7 +131,7 @@
       }
 
       .bigger-icon {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
         transition: all 0.3s ease;
       }
 
@@ -132,7 +141,7 @@
       }
 
       /* =============================================
-        CARD STYLING
+        CARD STYLING - IMPROVED SIZES & GAPS
         ============================================= */
       .card {
         background: #ffffff;
@@ -142,7 +151,7 @@
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         overflow: hidden;
         position: relative;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
       .card::before {
@@ -169,28 +178,34 @@
       }
 
       .card-body {
-        padding: 1.5rem;
+        padding: 2rem;
       }
 
       .card-title {
         color: #1a1a1a;
         font-weight: 600;
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
       }
 
       .card-subtitle {
         color: #8b1538 !important;
         font-weight: 500;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
       }
 
       .card-text {
         color: #6c757d;
-        line-height: 1.6;
+        line-height: 1.7;
+        font-size: 0.95rem;
       }
 
       /* Card Images */
       .card img.card-img-top {
         transition: transform 0.3s ease;
+        height: 200px;
+        object-fit: cover;
       }
 
       .card:hover img.card-img-top {
@@ -198,7 +213,7 @@
       }
 
       /* =============================================
-        BUTTON STYLING
+        BUTTON STYLING - IMPROVED SIZING
         ============================================= */
 
       .btn-style,
@@ -206,14 +221,15 @@
         background: linear-gradient(45deg, #8b1538, #dc3545);
         color: white !important;
         border: none;
-        padding: 0.7rem 1.5rem;
-        margin-top: 20px;
+        padding: 0.85rem 2rem;
+        margin-top: 1.5rem;
         border-radius: 25px;
         font-weight: 500;
+        font-size: 0.95rem;
         text-decoration: none;
         transition: all 0.3s ease;
         display: inline-block;
-        position: initial;
+        position: relative;
         overflow: hidden;
       }
 
@@ -247,48 +263,50 @@
       }
 
       /* ============================================
-   SKILLS SECTION
+   SKILLS SECTION - IMPROVED GAPS
    ============================================ */
       .skills-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1.5rem;
-        margin-top: 3rem;
+        gap: 1.25rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
       }
 
       .skill-item {
         display: flex;
         align-items: center;
-        gap: 0.8rem;
-        padding: 1rem 1.5rem;
-        background: var(--white);
+        gap: 0.75rem;
+        padding: 0.85rem 1.5rem;
+        background: #ffffff;
         border-radius: 50px;
-        box-shadow: 0 2px 15px var(--shadow);
-        transition: var(--transition);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
       }
 
       .skill-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 25px var(--shadow-hover);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
       }
 
       .skill-item img {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
         object-fit: contain;
       }
 
       .skill-item span {
         font-weight: 600;
-        color: var(--text-primary);
+        color: #1a1a1a;
+        font-size: 0.95rem;
       }
 
       /* =============================================
         NEON EFFECTS & CONTACT SECTION
         ============================================= */
       .neon-text {
-        color: #8b1538; /* Maroon accent */
+        color: #8b1538;
         background: linear-gradient(45deg, #8b1538, #dc3545);
         background-clip: text;
         -webkit-background-clip: text;
@@ -303,6 +321,7 @@
           inset 0 0 30px rgba(139, 21, 56, 0.05);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
+        padding: 2.5rem;
       }
 
       .neon-box:hover {
@@ -315,6 +334,8 @@
         color: white !important;
         border: 2px solid transparent !important;
         transition: all 0.3s ease;
+        padding: 0.85rem 2rem;
+        font-size: 0.95rem;
       }
 
       .neon-btn:hover {
@@ -324,14 +345,15 @@
       }
 
       /* =============================================
-        FORM CONTROLS
+        FORM CONTROLS - IMPROVED SPACING
         ============================================= */
       .form-control {
         border: 2px solid rgba(139, 21, 56, 0.1);
         border-radius: 12px;
-        padding: 0.8rem 1rem;
+        padding: 1rem 1.25rem;
         transition: all 0.3s ease;
         background: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
       }
 
       .form-control:focus {
@@ -341,7 +363,7 @@
       }
 
       /* =============================================
-        SOCIAL LINKS & FOOTER
+        SOCIAL LINKS & FOOTER - IMPROVED SPACING
         ============================================= */
       .social {
         color: #8b1538;
@@ -349,9 +371,10 @@
         transition: all 0.3s ease;
         text-decoration: none;
         display: inline-block;
-        padding: 0.4rem;
+        padding: 0.6rem;
         border-radius: 50%;
         background: rgba(139, 21, 56, 0.1);
+        margin: 0.25rem;
       }
 
       .social:hover {
@@ -399,12 +422,13 @@
         color: #8b1538;
         position: relative;
         display: inline-block;
+        margin-bottom: 2rem;
       }
 
       .style-label::after {
         content: "";
         position: absolute;
-        bottom: -5px;
+        bottom: -8px;
         left: 50%;
         transform: translateX(-50%);
         width: 60px;
@@ -416,17 +440,107 @@
       /* =============================================
         RESPONSIVE ENHANCEMENTS
         ============================================= */
+      @media (max-width: 992px) {
+        section {
+          padding: 4rem 0;
+        }
+
+        #mainNav {
+          width: 95%;
+          margin: 0.5rem auto;
+          padding: 0.75rem 1rem;
+        }
+
+        #mainNav .nav-link {
+          padding: 0.7rem 1rem !important;
+          margin: 0.2rem 0;
+        }
+
+        .card-body {
+          padding: 1.5rem;
+        }
+
+        .skill-item {
+          padding: 0.75rem 1.25rem;
+        }
+
+        .skill-item img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
       @media (max-width: 768px) {
+        section {
+          padding: 3rem 0;
+        }
+
         .card:hover {
           transform: translateY(-4px) scale(1.01);
         }
 
-        .skill-icon:hover {
-          transform: scale(1.1);
-        }
-
         #mainNav .nav-link:hover {
           transform: none;
+        }
+
+        .display-4 {
+          font-size: 2rem;
+        }
+
+        .card-body {
+          padding: 1.25rem;
+        }
+
+        .card-title {
+          font-size: 1.1rem;
+        }
+
+        .card-text {
+          font-size: 0.9rem;
+        }
+
+        .neon-box {
+          padding: 1.5rem;
+        }
+
+        .skills-container {
+          gap: 1rem;
+        }
+
+        .skill-item {
+          padding: 0.65rem 1rem;
+        }
+
+        .btn {
+          padding: 0.75rem 1.5rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        section {
+          padding: 2.5rem 0;
+        }
+
+        #mainNav {
+          width: 98%;
+        }
+
+        .card-body {
+          padding: 1rem;
+        }
+
+        .skill-item {
+          padding: 0.5rem 0.85rem;
+        }
+
+        .skill-item img {
+          width: 28px;
+          height: 28px;
+        }
+
+        .skill-item span {
+          font-size: 0.85rem;
         }
       }
 
@@ -470,15 +584,6 @@
         scroll-behavior: smooth;
       }
 
-      /* Section Spacing Enhancement */
-      section {
-        padding: 4rem 0;
-      }
-
-      #home {
-        padding: 2rem 0;
-      }
-
       /* Profile Image Enhancement */
       img[alt="my photo"] {
         transition: all 0.3s ease;
@@ -502,7 +607,30 @@
         opacity: 1;
         transform: translateY(0);
       }
+
+      /* Additional spacing utilities */
+      .mb-custom {
+        margin-bottom: 2rem;
+      }
+
+      .gap-custom {
+        gap: 2rem;
+      }
+
+      /* Hero section specific */
+      #home {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+      }
+
+      @media (max-width: 768px) {
+        #home {
+          padding-top: 6rem;
+          padding-bottom: 3rem;
+        }
+      }
     </style>
+    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#mainNav">
     <nav
@@ -515,7 +643,7 @@
         box-shadow: 0 0 18px rgba(255, 46, 166, 0.35);
       "
     >
-      <div class="container justify-content-end">
+      <div class="container-fluid justify-content-end">
         <button
           class="navbar-toggler"
           type="button"
@@ -528,25 +656,25 @@
         <div class="collapse navbar-collapse" id="navMenu">
           <ul class="navbar-nav m-auto justify-content-center">
             <li class="nav-item">
-              <a href="#home" class="nav-link me-lg-4">
+              <a href="#home" class="nav-link me-lg-3">
                 <i class="bi bi-house bigger-icon"></i>
                 <span class="d-md-none">Home</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#service" class="nav-link me-lg-4">
+              <a href="#service" class="nav-link me-lg-3">
                 <i class="bi bi-gear bigger-icon"></i>
                 <span class="d-md-none">Service</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#skills" class="nav-link me-lg-4">
+              <a href="#skills" class="nav-link me-lg-3">
                 <i class="bi bi-code bigger-icon"></i>
                 <span class="d-md-none">Skills</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#projects" class="nav-link me-lg-4">
+              <a href="#projects" class="nav-link me-lg-3">
                 <i class="bi bi-folder bigger-icon"></i>
                 <span class="d-md-none">Projects</span>
               </a>
@@ -563,57 +691,55 @@
     </nav>
 
     <section id="home">
-      <div
-        class="container-md vh-100 d-flex flex-column align-items-center mt-1"
-      >
-        <div class="row">
-          <div class="col-lg-6 m-auto mt-auto reveal">
+      <div class="container-lg">
+        <div class="row align-items-center">
+          <div class="col-lg-6 m-auto reveal">
             <h4 class="display-4 fw-bolder m-3">
               Hi, I'm <br /><span class="typewriter mt-1">Hazel Phonie</span>
             </h4>
             <p
               class="text-muted ms-3 mt-0"
-              style="color: #3c1f1f; font-weight: 900"
+              style="color: #3c1f1f; font-weight: 900; font-size: 1.05rem"
             >
-              I am Hazel Phonie P. Palang, an IT student in University of
-              Mindanao, currently interested in Web developing, and particularly
-              anything that involves designing.
+              I am an IT student at the University of Mindanao, currently
+              passionate about Web Development and particularly anything that
+              involves UI/UX Design.
             </p>
             <a
               href="bio.html"
               class="btn btn-style border-black rounded-5 ms-1"
             >
-              Explore more.</a
-            >
+              Explore more.
+            </a>
           </div>
-          <div class="col-lg-5 my-5 text-center floating reveal">
+          <div class="col-lg-5 my-4 text-center floating reveal">
             <img
               src="image/img1.jpg"
               alt="my photo"
               class="border-black rounded-circle"
-              style="width: 250px; height: auto"
+              style="width: 260px; height: auto"
             />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="service" class="py-5 reveal mt-3">
-      <div class="container justify-content-center">
-        <div class="d-flex justify-content-center my-5">
+    <section id="service" class="reveal">
+      <div class="container">
+        <div class="d-flex justify-content-center mb-custom">
           <h2 class="reveal style-label fw-bold">What I do.</h2>
         </div>
 
         <!-- Row 1 -->
-        <div class="row g-4 justify-content-center">
-          <div class="col-lg-4 d-flex justify-content-center">
-            <div class="card h-100" style="width: 20rem">
+        <div class="row g-3 justify-content-center">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
               <div class="card-body text-center">
-                <h5 class="card-title m-4">Frontend Development</h5>
+                <h5 class="card-title m-3">Frontend Development</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
                   Clean, Responsive Interfaces
                 </h6>
-                <p class="card-text m-3">
+                <p class="card-text mb-3">
                   I build fast, responsive, and accessible user interfaces using
                   modern web technologies that work smoothly across all devices.
                 </p>
@@ -622,70 +748,88 @@
             </div>
           </div>
 
-          <div class="col-lg-4 d-flex justify-content-center reveal">
-            <div class="card h-100" style="width: 20rem">
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card h-100">
               <div class="card-body text-center">
-                <h5 class="card-title m-4">Website Redesign</h5>
+                <h5 class="card-title m-3">Website Redesign</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
                   Modernize Your Online Presence
                 </h6>
-                <p class="card-text m-3">
+                <p class="card-text mb-3">
                   I redesign outdated websites to improve usability,
                   performance, and visual appeal without breaking existing
                   content.
                 </p>
-                <a href="#" class="btn m-4">Learn More</a>
+                <a href="#" class="btn">Learn More</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 d-flex justify-content-center reveal">
-            <div class="card h-100" style="width: 20rem">
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card h-100">
               <div class="card-body text-center">
-                <h5 class="card-title m-4">Responsive Web Design</h5>
+                <h5 class="card-title m-3">Responsive Web Design</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
                   Mobile-First Layouts
                 </h6>
-                <p class="card-text m-2">
+                <p class="card-text mb-3">
                   I create layouts that adapt seamlessly to phones, tablets, and
                   desktops for a consistent user experience.
                 </p>
-                <a href="#" class="btn m-3">Learn More</a>
+                <a href="#" class="btn">Learn More</a>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Row 2 -->
-        <div class="row g-4 justify-content-center mt-4">
-          <div class="col-lg-4 d-flex justify-content-center reveal">
-            <div class="card h-100" style="width: 20rem">
+        <div class="row g-3 justify-content-center mt-4">
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card h-100">
               <div class="card-body text-center">
-                <h5 class="card-title m-4">Landing Page Development</h5>
+                <h5 class="card-title m-3">Landing Page Development</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
                   Pages That Convert
                 </h6>
-                <p class="card-text">
+                <p class="card-text mb-3">
                   I design and develop focused landing pages built for speed,
                   clarity, and conversion.
                 </p>
-                <a href="#" class="btn m-4">Learn More</a>
+                <a href="#" class="btn">Learn More</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 d-flex justify-content-center reveal">
-            <div class="card h-100" style="width: 20rem">
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card h-100">
               <div class="card-body text-center">
-                <h5 class="card-title m-4">Website Maintenance</h5>
+                <h5 class="card-title m-3">Website Maintenance</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
                   Reliable Ongoing Support
                 </h6>
-                <p class="card-text m-3">
+                <p class="card-text mb-3">
                   I handle updates, bug fixes, and performance improvements so
                   your website stays secure and up to date.
                 </p>
-                <a href="#" class="btn m-4">Learn More</a>
+                <a href="#" class="btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <h5 class="card-title m-3">UI/UX Designing</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  User-Centered, Clean, and Intuitive Design
+                </h6>
+                <p class="card-text mb-3">
+                  We create visually appealing and easy-to-use interfaces that
+                  focus on user needs, ensuring smooth navigation, better
+                  usability, and an engaging digital experience across all
+                  devices.
+                </p>
+                <a href="#" class="btn">Learn More</a>
               </div>
             </div>
           </div>
@@ -693,78 +837,82 @@
       </div>
     </section>
 
-    <section id="skills" class="mt-4">
-      <h2 class="section-title reveal style-label">Skills & Technologies.</h2>
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title reveal style-label mb-custom">
+          Skills & Technologies.
+        </h2>
 
-      <!-- First Row -->
-      <div class="skills-container">
-        <div class="skill-item reveal">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-            alt="Java"
-          />
-          <span>Java</span>
+        <!-- First Row -->
+        <div class="skills-container">
+          <div class="skill-item reveal">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+              alt="Java"
+            />
+            <span>Java</span>
+          </div>
+          <div class="skill-item reveal">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+              alt="Python"
+            />
+            <span>Python</span>
+          </div>
+          <div class="skill-item reveal">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"
+              alt="R"
+            />
+            <span>R</span>
+          </div>
+          <div class="skill-item reveal">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="HTML5"
+            />
+            <span>HTML5</span>
+          </div>
         </div>
-        <div class="skill-item reveal">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-            alt="Python"
-          />
-          <span>Python</span>
-        </div>
-        <div class="skill-item reveal">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg"
-            alt="R"
-          />
-          <span>R</span>
-        </div>
-        <div class="skill-item reveal">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-            alt="HTML5"
-          />
-          <span>HTML5</span>
-        </div>
-      </div>
 
-      <!-- Second Row -->
-      <div class="skills-container">
-        <div class="skill-item reveal">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-            alt="CSS3"
-          />
-          <span>CSS3</span>
-        </div>
-        <div class="skill-item reveal">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-            alt="JavaScript"
-          />
-          <span>JavaScript</span>
-        </div>
-        <div class="skill-item reveal">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-            alt="Bootstrap"
-          />
-          <span>Bootstrap</span>
-        </div>
-        <div class="skill-item reveal">
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg"
-            alt="mysql"
-          />
-          <span>MySQL</span>
+        <!-- Second Row -->
+        <div class="skills-container">
+          <div class="skill-item reveal">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              alt="CSS3"
+            />
+            <span>CSS3</span>
+          </div>
+          <div class="skill-item reveal">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+            />
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-item reveal">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+              alt="Bootstrap"
+            />
+            <span>Bootstrap</span>
+          </div>
+          <div class="skill-item reveal">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg"
+              alt="mysql"
+            />
+            <span>MySQL</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="py-5 reveal mt-4">
+    <section id="projects" class="reveal">
       <div class="container text-center">
-        <h2 class="style-label fw-bold mb-5">What I did.</h2>
-        <div class="row g-4">
+        <h2 class="style-label fw-bold mb-custom">What I did.</h2>
+        <div class="row g-4 justify-content-center">
           <div class="col-md-4 reveal">
             <div class="card shadow h-100">
               <img src="https://picsum.photos/400/250" class="card-img-top" />
@@ -774,7 +922,7 @@
                   A fully responsive online shopping website with cart
                   functionality and payment integration.
                 </p>
-                <a href="#" class="btn btn-primary btn-sm mt-5">View</a>
+                <a href="#" class="btn btn-primary btn-sm mt-4">View</a>
               </div>
             </div>
           </div>
@@ -788,7 +936,7 @@
                   Real-time weather application that displays forecasts using
                   API integration and geolocation.
                 </p>
-                <a href="#" class="btn btn-primary btn-sm">View</a>
+                <a href="#" class="btn btn-primary btn-sm mt-4">View</a>
               </div>
             </div>
           </div>
@@ -802,7 +950,7 @@
                   Modern and minimalist portfolio design showcasing projects
                   with smooth animations and transitions.
                 </p>
-                <a href="#" class="btn btn-primary btn-sm">View</a>
+                <a href="#" class="btn btn-primary btn-sm mt-4">View</a>
               </div>
             </div>
           </div>
@@ -810,13 +958,13 @@
       </div>
     </section>
 
-    <section id="contact" class="py-5 reveal mt-3">
+    <section id="contact" class="reveal">
       <div class="container reveal d-flex justify-content-center">
         <div
-          class="neon-box p-4 rounded-4 text-center floating mb-0"
+          class="neon-box rounded-4 text-center floating mb-0"
           style="max-width: 600px; width: 100%"
         >
-          <h2 class="style-label">Get In Touch</h2>
+          <h2 class="style-label mb-3">Get In Touch</h2>
 
           <form action="">
             <input type="text" class="form-control mb-3" placeholder="Name" />
@@ -839,16 +987,16 @@
 
     <!-- FOOTER -->
     <footer
-      class="text-center py-3 border-top"
+      class="text-center py-4 border-top"
       style="background-color: #ffffff"
     >
       <h6 class="style-label">Let's connect!</h6>
-      <div class="d-inline justify-content-center">
+      <div class="d-inline justify-content-center mt-3">
         <div class="links">
           <a
             href="https://www.linkedin.com/in/hazel-phonie-palang-02306b359/"
             target="_blank"
-            class="social m-2 rounded-circle"
+            class="social rounded-circle"
           >
             <i class="bi bi-linkedin"></i>
           </a>
@@ -856,7 +1004,7 @@
           <a
             href="https://github.com/HazelPhoniePalang"
             target="_blank"
-            class="social m-2 rounded-circle"
+            class="social rounded-circle"
           >
             <i class="bi bi-github"></i>
           </a>
@@ -864,7 +1012,7 @@
           <a
             href="https://www.instagram.com/hnrhzle/"
             target="_blank"
-            class="social m-2 rounded-circle"
+            class="social rounded-circle"
           >
             <i class="bi bi-instagram"></i>
           </a>
@@ -872,12 +1020,12 @@
           <a
             href="https://www.facebook.com/hazelphonie"
             target="_blank"
-            class="social m-2 rounded-circle"
+            class="social rounded-circle"
           >
             <i class="bi bi-facebook"></i>
           </a>
         </div>
-        <p class="mt-2" style="font-size: small">
+        <p class="mt-3" style="font-size: 0.875rem">
           © 2026 Hazel Portfolio. All rights reserved.
         </p>
       </div>
