@@ -4,694 +4,112 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hazel | Portfolio</title>
+    <meta name="description" content="Web Developer Portfolio - Hazel Phonie" />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    ></script>
 
-    <!-- Icons -->
+    <!-- Bootstrap Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
 
-      body {
-        margin-top: 0;
-        color: #999;
-        backface-visibility: var(50%);
-
-        font:
-          400 16px/1.5 exo,
-          ubuntu,
-          "Space Grotesk",
-          sans-serif;
-
-        text-align: center;
-
-        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC")
-          repeat 0 0;
-      }
-
-      /* Dark + blur layer */
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: rgba(222, 222, 222, 0.35);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        z-index: -1;
-      }
-
-      /* All sections - improved spacing */
-      section {
-        scroll-margin-top: 100px;
-        min-height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 6rem 0;
-      }
-
-      /* Enhanced Typography with better spacing */
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        color: #1a1a1a;
-        font-weight: 600;
-        margin-bottom: 1.25rem;
-      }
-
-      .display-4 span {
-        color: #8b1538;
-        background: linear-gradient(45deg, #8b1538, #dc3545);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      /* =============================================
-        NAVIGATION STYLING - IMPROVED SPACING
-        ============================================= */
-
-      #mainNav {
-        background: rgba(39, 38, 38, 0.85) !important;
-        backdrop-filter: blur(20px) !important;
-        border-bottom: 3px solid rgba(139, 21, 56, 0.6) !important;
-        box-shadow:
-          0 8px 32px rgba(0, 0, 0, 0.1),
-          0 0 20px rgba(139, 21, 56, 0.3) !important;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        width: 50%;
-        max-width: 1000px;
-        padding: 0.5rem 1rem;
-      }
-
-      #mainNav:hover {
-        box-shadow:
-          0 12px 40px rgba(0, 0, 0, 0.15),
-          0 0 25px rgba(139, 21, 56, 0.4) !important;
-      }
-
-      /* Navigation Links - improved spacing */
-      #mainNav .nav-link {
-        color: rgba(255, 255, 255, 0.9) !important;
-        transition: all 0.3s ease;
-        padding: 0.6rem 1.2rem !important;
-        border-radius: 8px;
-        position: relative;
-        margin: 0 0.25rem;
-      }
-
-      #mainNav .nav-link:hover {
-        color: #ffffff !important;
-        background: rgba(139, 21, 56, 0.2);
-        transform: translateY(-2px);
-      }
-
-      #mainNav .nav-link.active {
-        color: #8b1538 !important;
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      .bigger-icon {
-        font-size: 1.25rem;
-        transition: all 0.3s ease;
-      }
-
-      #mainNav .nav-link:hover .bigger-icon {
-        transform: scale(1.1);
-        color: #ff6b8a;
-      }
-
-      /* =============================================
-        CARD STYLING - IMPROVED SIZES & GAPS
-        ============================================= */
-      .card {
-        background: #ffffff;
-        border: none;
-        border-radius: 16px !important;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        overflow: hidden;
-        position: relative;
-        margin-bottom: 1.5rem;
-      }
-
-      .card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #8b1538, #dc3545, #8b1538);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-
-      .card:hover::before {
-        transform: scaleX(1);
-      }
-
-      .card:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow:
-          0 15px 40px rgba(0, 0, 0, 0.15),
-          0 0 20px rgba(139, 21, 56, 0.1);
-      }
-
-      .card-body {
-        padding: 2rem;
-      }
-
-      .card-title {
-        color: #1a1a1a;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        font-size: 1.25rem;
-      }
-
-      .card-subtitle {
-        color: #8b1538 !important;
-        font-weight: 500;
-        font-size: 0.95rem;
-        margin-bottom: 1rem;
-      }
-
-      .card-text {
-        color: #6c757d;
-        line-height: 1.7;
-        font-size: 0.95rem;
-      }
-
-      /* Card Images */
-      .card img.card-img-top {
-        transition: transform 0.3s ease;
-        height: 200px;
-        object-fit: cover;
-      }
-
-      .card:hover img.card-img-top {
-        transform: scale(1.05);
-      }
-
-      /* =============================================
-        BUTTON STYLING - IMPROVED SIZING
-        ============================================= */
-
-      .btn-style,
-      .btn {
-        background: linear-gradient(45deg, #8b1538, #dc3545);
-        color: white !important;
-        border: none;
-        padding: 0.85rem 2rem;
-        margin-top: 1.5rem;
-        border-radius: 25px;
-        font-weight: 500;
-        font-size: 0.95rem;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        display: inline-block;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn-style:hover,
-      .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(139, 21, 56, 0.3);
-        background: linear-gradient(45deg, #a01846, #e74c3c);
-      }
-
-      .btn-style::before,
-      .btn::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: left 0.5s;
-      }
-
-      .btn-style:hover::before,
-      .btn:hover::before {
-        left: 100%;
-      }
-
-      /* ============================================
-   SKILLS SECTION - IMPROVED GAPS
-   ============================================ */
-      .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.25rem;
-        margin-top: 2.5rem;
-        margin-bottom: 2.5rem;
-      }
-
-      .skill-item {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.85rem 1.5rem;
-        background: #ffffff;
-        border-radius: 50px;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      .skill-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      }
-
-      .skill-item img {
-        width: 36px;
-        height: 36px;
-        object-fit: contain;
-      }
-
-      .skill-item span {
-        font-weight: 600;
-        color: #1a1a1a;
-        font-size: 0.95rem;
-      }
-
-      /* =============================================
-        NEON EFFECTS & CONTACT SECTION
-        ============================================= */
-      .neon-text {
-        color: #8b1538;
-        background: linear-gradient(45deg, #8b1538, #dc3545);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .neon-box {
-        background: rgba(255, 255, 255, 0.95);
-        border: 2px solid rgba(139, 21, 56, 0.3);
-        box-shadow:
-          0 0 30px rgba(139, 21, 56, 0.1),
-          inset 0 0 30px rgba(139, 21, 56, 0.05);
-        backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-        padding: 2.5rem;
-      }
-
-      .neon-box:hover {
-        border-color: rgba(139, 21, 56, 0.5);
-        box-shadow: 0 0 40px rgba(139, 21, 56, 0.2);
-      }
-
-      .neon-btn {
-        background: linear-gradient(45deg, #8b1538, #dc3545) !important;
-        color: white !important;
-        border: 2px solid transparent !important;
-        transition: all 0.3s ease;
-        padding: 0.85rem 2rem;
-        font-size: 0.95rem;
-      }
-
-      .neon-btn:hover {
-        background: linear-gradient(45deg, #dc3545, #8b1538) !important;
-        box-shadow: 0 0 20px rgba(139, 21, 56, 0.4) !important;
-        transform: translateY(-2px);
-      }
-
-      /* =============================================
-        FORM CONTROLS - IMPROVED SPACING
-        ============================================= */
-      .form-control {
-        border: 2px solid rgba(139, 21, 56, 0.1);
-        border-radius: 12px;
-        padding: 1rem 1.25rem;
-        transition: all 0.3s ease;
-        background: rgba(255, 255, 255, 0.9);
-        font-size: 0.95rem;
-      }
-
-      .form-control:focus {
-        border-color: rgba(139, 21, 56, 0.5);
-        box-shadow: 0 0 0 0.2rem rgba(139, 21, 56, 0.1);
-        background: #ffffff;
-      }
-
-      /* =============================================
-        SOCIAL LINKS & FOOTER - IMPROVED SPACING
-        ============================================= */
-      .social {
-        color: #8b1538;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        background: rgba(139, 21, 56, 0.1);
-        margin: 0.25rem;
-      }
-      .social:hover {
-        color: #ffffff;
-        background: #8b1538;
-        transform: translateY(-3px) scale(1.1);
-        box-shadow: 0 8px 20px rgba(139, 21, 56, 0.3);
-      }
-
-      /* =============================================
-        ANIMATIONS & UTILITY CLASSES
-        ============================================= */
-      .floating {
-        animation: floating 3s ease-in-out infinite;
-      }
-
-      @keyframes floating {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        animation-name: fade-up;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-        animation-timeline: view();
-        animation-range: entry 20% cover 40%;
-      }
-
-      @keyframes fade-up {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .style-label {
-        color: #8b1538;
-        position: relative;
-        display: inline-block;
-        margin-bottom: 1rem;
-      }
-
-      .style-label::after {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 3px;
-        background: linear-gradient(90deg, #8b1538, #dc3545);
-        border-radius: 2px;
-      }
-
-      /* =============================================
-        RESPONSIVE ENHANCEMENTS
-        ============================================= */
-      @media (max-width: 992px) {
-        section {
-          padding: 4rem 0;
-        }
-
-        #mainNav {
-          width: 95%;
-          margin: 0.5rem auto;
-          padding: 0.75rem 1rem;
-        }
-
-        #mainNav .nav-link {
-          padding: 0.7rem 1rem !important;
-          margin: 0.2rem 0;
-        }
-
-        .card-body {
-          padding: 1.5rem;
-        }
-
-        .skill-item {
-          padding: 0.75rem 1.25rem;
-        }
-
-        .skill-item img {
-          width: 32px;
-          height: 32px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        section {
-          padding: 3rem 0;
-        }
-
-        .card:hover {
-          transform: translateY(-4px) scale(1.01);
-        }
-
-        #mainNav .nav-link:hover {
-          transform: none;
-        }
-
-        .display-4 {
-          font-size: 2rem;
-        }
-
-        .card-body {
-          padding: 1.25rem;
-        }
-
-        .card-title {
-          font-size: 1.1rem;
-        }
-
-        .card-text {
-          font-size: 0.9rem;
-        }
-
-        .neon-box {
-          padding: 1.5rem;
-        }
-
-        .skills-container {
-          gap: 1rem;
-        }
-
-        .skill-item {
-          padding: 0.65rem 1rem;
-        }
-
-        .btn {
-          padding: 0.75rem 1.5rem;
-          font-size: 0.9rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        section {
-          padding: 2.5rem 0;
-        }
-
-        #mainNav {
-          width: 98%;
-        }
-
-        .card-body {
-          padding: 1rem;
-        }
-
-        .skill-item {
-          padding: 0.5rem 0.85rem;
-        }
-
-        .skill-item img {
-          width: 28px;
-          height: 28px;
-        }
-
-        .skill-item span {
-          font-size: 0.85rem;
-        }
-      }
-
-      /* Typing */
-      .typewriter {
-        display: inline-block;
-        overflow: hidden;
-        border-right: 0.05em solid #8b1538;
-        white-space: nowrap;
-        letter-spacing: 0.05em;
-        animation:
-          typing 3.5s steps(14, end),
-          blink-caret 0.75s step-end infinite;
-      }
-
-      /* The typing effect */
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
-
-      /* Cursor blink */
-      @keyframes blink-caret {
-        from,
-        to {
-          border-color: transparent;
-        }
-        50% {
-          border-color: #8b1538;
-        }
-      }
-
-      /* =============================================
-        SMOOTH SCROLLING
-        ============================================= */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Profile Image Enhancement */
-      img[alt="my photo"] {
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 30px #8b1538;
-      }
-
-      img[alt="my photo"]:hover {
-        transform: scale(1.05);
-        box-shadow: 0 15px 40px #8b1538;
-      }
-
-      .sent-msg {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: 0.4s ease;
-        color: #e10600;
-        font-weight: 600;
-      }
-
-      #sent:target {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Additional spacing utilities */
-      .mb-custom {
-        margin-bottom: 2rem;
-      }
-
-      .gap-custom {
-        gap: 2rem;
-      }
-
-      /* Hero section specific */
-      #home {
-        padding-top: 8rem;
-        padding-bottom: 4rem;
-      }
-
-      @media (max-width: 768px) {
-        #home {
-          padding-top: 6rem;
-          padding-bottom: 3rem;
-        }
-      }
-    </style>
     <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#mainNav">
+    <!-- Loader -->
+    <div id="loader">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <p class="loader-text">Loading...</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
     <nav
       id="mainNav"
       class="navbar navbar-expand-md navbar-dark shadow-dark-lg m-md-2 rounded-5 position-fixed top-0 start-50 translate-middle-x"
-      style="
-        background: rgba(0, 0, 0, 0.55);
-        backdrop-filter: blur(12px);
-        border-bottom: 3px solid rgba(255, 46, 166, 0.4);
-        box-shadow: 0 0 18px rgba(255, 46, 166, 0.35);
-      "
     >
-      <div class="container-fluid justify-content-end">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#home">HAZEL</a>
+
+        <!-- Toggler -->
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Navigation Menu -->
         <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav m-auto justify-content-center">
+          <ul class="navbar-nav align-items-center">
             <li class="nav-item">
-              <a href="#home" class="nav-link me-lg-3">
+              <a href="#home" class="nav-link">
                 <i class="bi bi-house bigger-icon"></i>
-                <span class="d-md-none">Home</span>
+                <span>Home</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#service" class="nav-link me-lg-3">
+              <a href="#service" class="nav-link">
                 <i class="bi bi-gear bigger-icon"></i>
-                <span class="d-md-none">Service</span>
+                <span>Service</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#skills" class="nav-link me-lg-3">
+              <a href="#skills" class="nav-link">
                 <i class="bi bi-code bigger-icon"></i>
-                <span class="d-md-none">Skills</span>
+                <span>Skills</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#projects" class="nav-link me-lg-3">
+              <a href="#projects" class="nav-link">
                 <i class="bi bi-folder bigger-icon"></i>
-                <span class="d-md-none">Projects</span>
+                <span>Projects</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="#contact" class="nav-link">
                 <i class="bi bi-envelope bigger-icon"></i>
-                <span class="d-md-none">Contact me</span>
+                <span>Contact</span>
               </a>
+            </li>
+            <li>
+              <!-- Theme Toggle -->
+              <button
+                class="theme-toggle align-items-end"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle dark mode"
+              >
+                <i class="bi bi-moon" id="themeIcon"></i>
+              </button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home">
       <div class="container-lg">
         <div class="row align-items-center">
@@ -700,17 +118,18 @@
               Hi, I'm <br /><span class="typewriter mt-1">Hazel Phonie</span>
             </h4>
             <p
-              class="text-muted ms-3 mt-0"
-              style="color: #3c1f1f; font-weight: 900; font-size: 1.05rem"
+              class="ms-3 mt-0 text-muted"
+              style="
+                font-weight: 600;
+                font-size: 1.05rem;
+                color: var(--text-secondary);
+              "
             >
               I am an IT student at the University of Mindanao, currently
               passionate about Web Development and particularly anything that
               involves UI/UX Design.
             </p>
-            <a
-              href="bio.html"
-              class="btn btn-style border-black rounded-5 ms-1"
-            >
+            <a href="bio.html" class="btn btn-style rounded-5 ms-1">
               Explore more.
             </a>
           </div>
@@ -718,18 +137,20 @@
             <img
               src="image/img1.jpg"
               alt="my photo"
-              class="border-black rounded-circle"
+              class="rounded-circle"
               style="width: 260px; height: auto"
+              onerror="this.src = 'https://via.placeholder.com/260?text=Hazel'"
             />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section id="service" class="reveal">
       <div class="container">
         <div class="d-flex justify-content-center mb-custom">
-          <h2 class="reveal style-label fw-bold">What I do.</h2>
+          <h2 class="reveal style-label fw-bold">What I Do.</h2>
         </div>
 
         <!-- Row 1 -->
@@ -839,6 +260,7 @@
       </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
       <div class="container">
         <h2 class="section-title reveal style-label mb-custom">
@@ -911,27 +333,41 @@
       </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="reveal">
       <div class="container text-center">
-        <h2 class="style-label fw-bold mb-custom">What I did.</h2>
+        <h2 class="style-label fw-bold mb-custom">What I Did.</h2>
         <div class="row g-4 justify-content-center">
           <div class="col-md-4 reveal">
             <div class="card shadow h-100">
-              <img src="https://picsum.photos/400/250" class="card-img-top" />
+              <img
+                src="image/Screenshot 2026-02-16 131638.png"
+                class="card-img-top"
+                alt="E-Commerce Platform"
+              />
               <div class="card-body">
-                <h5 class="card-title">E-Commerce Platform</h5>
+                <h5 class="card-title">Pomodoravle</h5>
                 <p class="card-text">
-                  A fully responsive online shopping website with cart
-                  functionality and payment integration.
+                  A beautiful, modern Pomodoro Timer web application with
+                  customizable durations, session tracking, and browser
+                  notifications.
                 </p>
-                <a href="#" class="btn btn-primary btn-sm mt-4">View</a>
+                <a
+                  href="https://pomodoravle.netlify.app/"
+                  class="btn btn-primary btn-sm mt-4"
+                  >View Website</a
+                >
               </div>
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 reveal">
             <div class="card shadow h-100">
-              <img src="https://picsum.photos/401/250" class="card-img-top" />
+              <img
+                src="https://picsum.photos/401/250"
+                class="card-img-top"
+                alt="Weather Dashboard"
+              />
               <div class="card-body">
                 <h5 class="card-title">Weather Dashboard</h5>
                 <p class="card-text">
@@ -943,9 +379,13 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 reveal">
             <div class="card shadow h-100">
-              <img src="image/Screenshot 2026-02-08 131950.png" class="card-img-top" />
+              <img
+                src="image/Screenshot 2026-02-08 131950.png"
+                class="card-img-top"
+                alt="Portfolio Template"
+              />
               <div class="card-body">
                 <h5 class="card-title">Portfolio Template</h5>
                 <p class="card-text">
@@ -955,7 +395,9 @@
                 <a
                   href="https://portfolio-wheat-chi-julczf1py1.vercel.app/"
                   class="btn btn-primary btn-sm mt-4"
-                  >View</a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View Website</a
                 >
               </div>
             </div>
@@ -964,6 +406,7 @@
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="reveal">
       <div class="container reveal d-flex justify-content-center">
         <div
@@ -972,64 +415,415 @@
         >
           <h2 class="style-label mb-3">Get In Touch</h2>
 
-          <form action="">
-            <input type="text" class="form-control mb-3" placeholder="Name" />
-            <input type="email" class="form-control mb-3" placeholder="Email" />
-            <textarea
-              class="form-control mb-3"
-              rows="4"
-              placeholder="Message"
-            ></textarea>
+          <form id="contactForm" novalidate>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Name"
+                id="nameInput"
+                required
+              />
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                id="emailInput"
+                required
+              />
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                rows="4"
+                placeholder="Message"
+                id="messageInput"
+                required
+              ></textarea>
+              <div class="invalid-feedback">Please enter your message.</div>
+            </div>
 
-            <button class="btn neon-btn rounded-5 border-0">
+            <button type="submit" class="btn neon-btn rounded-5 border-0">
               Send Message
             </button>
           </form>
 
-          <p class="sent-msg mt-3">Message sent successfully.</p>
+          <p class="sent-msg mt-3" id="successMessage">
+            <i class="bi bi-check-circle-fill"></i> Message sent successfully!
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer
-      class="text-center py-3 border-top"
-      style="background-color: #ffffff"
-    >
-      <h6 class="style-label mb-2">Let's connect!</h6>
-      <div class="links">
-        <a
-          href="https://www.linkedin.com/in/hazel-phonie-palang-02306b359/"
-          target="_blank"
-          class="social rounded-circle"
-        >
-          <i class="bi bi-linkedin"></i>
-        </a>
-        <a
-          href="https://github.com/HazelPhoniePalang"
-          target="_blank"
-          class="social rounded-circle"
-        >
-          <i class="bi bi-github"></i>
-        </a>
-        <a
-          href="https://www.instagram.com/hnrhzle/"
-          target="_blank"
-          class="social rounded-circle"
-        >
-          <i class="bi bi-instagram"></i>
-        </a>
-        <a
-          href="https://www.facebook.com/hazelphonie"
-          target="_blank"
-          class="social rounded-circle"
-        >
-          <i class="bi bi-facebook"></i>
-        </a>
+    <!-- Footer -->
+    <footer class="py-5">
+      <div class="container">
+        <!-- Top Section with Links -->
+        <div class="row text-center text-md-start">
+          <!-- Logo/Brand -->
+          <div class="col-md-2 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-1" style="color: var(--secondary-color)">
+              HAZEL
+            </h5>
+            <p class="mb-0" style="font-size: 0.75rem; color: #ccc">
+              Web Developer
+            </p>
+          </div>
+
+          <!-- Column 1 -->
+          <div class="col-md-2 mb-4 mb-md-0">
+            <h6
+              class="fw-bold mb-3"
+              style="
+                font-size: 0.875rem;
+                letter-spacing: 1px;
+                color: var(--secondary-color);
+              "
+            >
+              PROJECTS
+            </h6>
+            <ul class="list-unstyled" style="font-size: 0.875rem">
+              <li class="mb-2">
+                <a href="#projects" class="text-decoration-none footer-link"
+                  >Portfolio Work</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#projects" class="text-decoration-none footer-link"
+                  >Showcase</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="https://github.com/HazelPhoniePalang"
+                  class="text-decoration-none footer-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub Repos</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="col-md-2 mb-4 mb-md-0">
+            <h6
+              class="fw-bold mb-3"
+              style="
+                font-size: 0.875rem;
+                letter-spacing: 1px;
+                color: var(--secondary-color);
+              "
+            >
+              SKILLS
+            </h6>
+            <ul class="list-unstyled" style="font-size: 0.875rem">
+              <li class="mb-2">
+                <a href="#skills" class="text-decoration-none footer-link"
+                  >Frontend Dev</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#skills" class="text-decoration-none footer-link"
+                  >Backend Dev</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#skills" class="text-decoration-none footer-link"
+                  >UI/UX Design</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="col-md-2 mb-4 mb-md-0">
+            <h6
+              class="fw-bold mb-3"
+              style="
+                font-size: 0.875rem;
+                letter-spacing: 1px;
+                color: var(--secondary-color);
+              "
+            >
+              CONNECT
+            </h6>
+            <ul class="list-unstyled" style="font-size: 0.875rem">
+              <li class="mb-2">
+                <a href="#contact" class="text-decoration-none footer-link"
+                  >Contact Form</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="bio.html" class="text-decoration-none footer-link"
+                  >Resume</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#contact" class="text-decoration-none footer-link"
+                  >Hire Me</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="col-md-2 mb-4 mb-md-0">
+            <h6
+              class="fw-bold mb-3"
+              style="
+                font-size: 0.875rem;
+                letter-spacing: 1px;
+                color: var(--secondary-color);
+              "
+            >
+              ABOUT
+            </h6>
+            <ul class="list-unstyled" style="font-size: 0.875rem">
+              <li class="mb-2">
+                <a href="#home" class="text-decoration-none footer-link"
+                  >My Story</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#home" class="text-decoration-none footer-link"
+                  >Experience</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#projects" class="text-decoration-none footer-link"
+                  >Portfolio</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <hr
+          class="my-4"
+          style="border-color: var(--secondary-color); opacity: 0.3"
+        />
+
+        <!-- Bottom Section -->
+        <div class="text-center">
+          <!-- Social Icons -->
+          <div class="mb-3">
+            <a
+              href="https://www.facebook.com/hazelphonie"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon me-2"
+              aria-label="Facebook"
+            >
+              <i class="bi bi-facebook"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/hazel-phonie-palang-02306b359/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon me-2"
+              aria-label="LinkedIn"
+            >
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/HazelPhoniePalang"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon me-2"
+              aria-label="GitHub"
+            >
+              <i class="bi bi-github"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/hnrhzle/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+              aria-label="Instagram"
+            >
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+
+          <!-- Copyright -->
+          <p class="mb-0" style="font-size: 0.875rem; color: #ccc">
+            © 2024 Hazel Phonie. All rights reserved.
+          </p>
+        </div>
       </div>
-      <p class="mt-2 mb-0" style="font-size: 0.875rem">
-        © 2026 Hazel Portfolio. All rights reserved.
-      </p>
     </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "2OlyYRD77QtJ1dxaC",
+        });
+      })();
+    </script>
+
+    <script></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+      // Loader
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        setTimeout(() => {
+          loader.classList.add("hidden");
+        }, 500);
+      });
+
+      // Dark Mode Toggle
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const body = document.body;
+
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark-mode");
+        themeIcon.classList.replace("bi-moon", "bi-sun");
+      }
+
+      themeToggle.addEventListener("click", function () {
+        document.documentElement.classList.toggle("dark-mode");
+
+        if (document.documentElement.classList.contains("dark-mode")) {
+          themeIcon.classList.replace("bi-moon", "bi-sun");
+          localStorage.setItem("theme", "dark");
+        } else {
+          themeIcon.classList.replace("bi-sun", "bi-moon");
+          localStorage.setItem("theme", "light");
+        }
+      });
+
+      // Contact Form Validation
+      const contactForm = document.getElementById("contactForm");
+      const successMessage = document.getElementById("successMessage");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let isValid = true;
+
+        // Validate Name
+        const nameInput = document.getElementById("nameInput");
+        if (!nameInput.value.trim()) {
+          nameInput.classList.add("is-invalid");
+          isValid = false;
+        } else {
+          nameInput.classList.remove("is-invalid");
+        }
+
+        // Validate Email
+        const emailInput = document.getElementById("emailInput");
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+          emailInput.classList.add("is-invalid");
+          isValid = false;
+        } else {
+          emailInput.classList.remove("is-invalid");
+        }
+
+        // Validate Message
+        const messageInput = document.getElementById("messageInput");
+        if (!messageInput.value.trim()) {
+          messageInput.classList.add("is-invalid");
+          isValid = false;
+        } else {
+          messageInput.classList.remove("is-invalid");
+        }
+
+        // If valid, show success message
+        // If valid, send to Gmail
+        if (isValid) {
+          const name = nameInput.value.trim();
+          const email = emailInput.value.trim();
+          const message = messageInput.value.trim();
+
+          const subject = encodeURIComponent(
+            "New Message from Portfolio Website",
+          );
+          const body = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+          );
+
+          window.location.href = `mailto:hazelphoniepalang@gmail.com?subject=${subject}&body=${body}`;
+
+          contactForm.reset();
+        }
+      });
+
+      // Remove invalid class on input
+      const formInputs = document.querySelectorAll(".form-control");
+      formInputs.forEach((input) => {
+        input.addEventListener("input", function () {
+          if (this.classList.contains("is-invalid")) {
+            this.classList.remove("is-invalid");
+          }
+        });
+      });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+
+            // Close mobile menu if open
+            const navMenu = document.getElementById("navMenu");
+            if (navMenu.classList.contains("show")) {
+              const bsCollapse = new bootstrap.Collapse(navMenu, {
+                toggle: true,
+              });
+            }
+          }
+        });
+      });
+
+      // Reveal animations on scroll
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const revealOnScroll = function () {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 150;
+
+        revealElements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+
+          if (elementTop < windowHeight - elementVisible) {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll(); // Initial check
+    </script>
   </body>
 </html>
